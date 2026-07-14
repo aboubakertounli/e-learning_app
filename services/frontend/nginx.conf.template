@@ -1,0 +1,39 @@
+server {
+    listen 8080;
+    server_name _;
+    root /usr/share/nginx/html;
+    index index.html;
+
+    resolver 8.8.8.8 valid=30s;
+
+    location /api/auth {
+        set $auth_upstream ${AUTH_SERVICE_URL};
+        proxy_pass $auth_upstream;
+        proxy_http_version 1.1;
+        proxy_ssl_server_name on;
+        proxy_set_header Host $proxy_host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+
+    location /api/users {
+        set $auth_upstream ${AUTH_SERVICE_URL};
+        proxy_pass $auth_upstream;
+        proxy_http_version 1.1;
+        proxy_ssl_server_name on;
+        proxy_set_header Host $proxy_host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+
+    location /api/ {
+        set $learning_upstream ${LEARNING_SERVICE_URL};
+        proxy_pass $learning_upstream;
+        proxy_http_version 1.1;
+        proxy_ssl_server_name on;
+        proxy_set_header Host $proxy_host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
