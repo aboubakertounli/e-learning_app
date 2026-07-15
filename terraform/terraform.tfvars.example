@@ -1,0 +1,57 @@
+# =============================================================================
+# LearnFlow — Exemple de configuration Terraform
+# =============================================================================
+#
+# 1. Copier ce fichier :
+#      copy terraform.tfvars.example terraform.tfvars
+#
+# 2. Remplir les valeurs (terraform.tfvars est gitignored — ne pas le committer)
+#
+# 3. Alternative OAuth : laisser oauth_token/oauth_secret vides et utiliser :
+#      $env:CC_OAUTH_TOKEN    = "..."
+#      $env:CC_OAUTH_SECRET   = "..."
+#      $env:CC_ORGANISATION  = "user_xxx"
+#
+# Obtenir organisation : clever profile
+# =============================================================================
+
+# ─── Clever Cloud (obligatoire) ───────────────────────────────────────────────
+
+organisation = "user_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+
+oauth_token  = "VOTRE_OAUTH_TOKEN"
+oauth_secret = "VOTRE_OAUTH_SECRET"
+
+# ─── Région & sizing ─────────────────────────────────────────────────────────
+
+region          = "par"
+postgresql_plan = "dev"
+instance_flavor = "XS"
+
+# ─── Noms des ressources ─────────────────────────────────────────────────────
+
+auth_app_name     = "learnflow-tf-auth"
+learning_app_name = "learnflow-tf-learning"
+frontend_app_name = "learnflow-tf-frontend"
+auth_db_name      = "postgresql-tf-auth"
+learning_db_name  = "postgresql-tf-learning"
+
+# ─── Application (obligatoire) ───────────────────────────────────────────────
+
+jwt_secret = "change-me-to-a-long-random-secret"
+
+# ─── Déploiement auto depuis GitHub (recommandé) ─────────────────────────────
+# terraform apply crée l'infra ET déploie le code des 3 services.
+# PAT GitHub : Settings → Developer settings → Personal access tokens
+# Format : "USERNAME:ghp_xxxx" (requis pour un dépôt privé)
+
+git_repository              = "https://github.com/VOTRE_USER/VOTRE_REPO.git"
+git_branch                  = "master"
+github_authentication_basic = "VOTRE_USER_GITHUB:ghp_VOTRE_PAT"
+
+# ─── Alternative : infra seulement (sans déploiement auto) ───────────────────
+# Laisser git_repository vide, puis git push manuel vers terraform output deploy_urls
+#
+# git_repository              = ""
+# git_branch                  = "master"
+# github_authentication_basic = ""
