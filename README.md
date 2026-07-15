@@ -2,7 +2,7 @@
 
 Plateforme e-learning en **microservices**, déployée sur **Clever Cloud** via **Terraform** (Infrastructure as Code).
 
-Projet de stage — Clever Cloud Morocco.
+Demo Deployment via Terraform — Clever Cloud Morocco.
 
 ---
 
