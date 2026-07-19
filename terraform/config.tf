@@ -1,6 +1,5 @@
 # =============================================================================
 # CONFIG — Provider, versions, variables
-# Sollicité par : terraform init, plan, apply, destroy
 # =============================================================================
 
 terraform {
