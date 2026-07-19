@@ -1,6 +1,5 @@
 # =============================================================================
 # OUTPUTS — URLs, IDs, deploy URLs
-# Sollicité par : terraform apply, terraform output
 # =============================================================================
 
 output "auth_app_id" {
