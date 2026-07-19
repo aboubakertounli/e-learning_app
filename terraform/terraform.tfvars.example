@@ -28,14 +28,12 @@ frontend_app_name = "learnflow-tf-frontend"
 auth_db_name      = "postgresql-tf-auth"
 learning_db_name  = "postgresql-tf-learning"
 
-# ─── Application (obligatoire) ───────────────────────────────────────────────
+# ─── Application ───────────────────────────────────────────────
 
-jwt_secret = "change-me-to-a-long-random-secret"
+jwt_secret = "add-a-secretJWT"
 
 # ─── Déploiement auto depuis GitHub (recommandé) ─────────────────────────────
 # terraform apply crée l'infra ET déploie le code des 3 services.
-# PAT GitHub : Settings → Developer settings → Personal access tokens
-# Format : "USERNAME:ghp_xxxx" (requis pour un dépôt privé)
 
 git_repository              = "https://github.com/VOTRE_USER/VOTRE_REPO.git"
 git_branch                  = "master"
