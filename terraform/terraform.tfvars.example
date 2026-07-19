@@ -6,16 +6,8 @@
 #      copy terraform.tfvars.example terraform.tfvars
 #
 # 2. Remplir les valeurs terraform.tfvars
-#
-# 3. Alternative OAuth : laisser oauth_token/oauth_secret vides et utiliser :
-#      $env:CC_OAUTH_TOKEN    = "..."
-#      $env:CC_OAUTH_SECRET   = "..."
-#      $env:CC_ORGANISATION  = "user_xxx"
-#
-# Obtenir organisation : clever profile
-# =============================================================================
 
-# ─── Clever Cloud (obligatoire) ───────────────────────────────────────────────
+# ─── Clever Cloud ───────────────────────────────────────────────
 
 organisation = "user_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
