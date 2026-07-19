@@ -1,6 +1,5 @@
 # =============================================================================
 # MAIN — Locals + ressources Clever Cloud
-# Sollicité par : terraform plan, apply, destroy
 # =============================================================================
 
 # ─── Locals (URLs auto + déploiement Git optionnel) ──────────────────────────
