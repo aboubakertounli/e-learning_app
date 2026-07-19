@@ -5,7 +5,7 @@
 # 1. Copier ce fichier :
 #      copy terraform.tfvars.example terraform.tfvars
 #
-# 2. Remplir les valeurs (terraform.tfvars est gitignored — ne pas le committer)
+# 2. Remplir les valeurs terraform.tfvars
 #
 # 3. Alternative OAuth : laisser oauth_token/oauth_secret vides et utiliser :
 #      $env:CC_OAUTH_TOKEN    = "..."
